@@ -1,0 +1,90 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Container for the carousel */
+.carousel-container {
+    position: relative;
+    width: 50%; /* Set width to 80% of the viewport width */
+    max-width: 1200px; /* Set a max-width for large screens */
+    margin: auto; /* Center the carousel */
+    overflow: hidden; /* Hide overflowing content */
+    border: 2px solid #ddd; /* Optional: Border around carousel */
+    border-radius: 8px; /* Optional: Rounded corners */
+}
+
+/* The carousel itself */
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Smooth transition when changing slides */
+}
+
+/* Individual items within the carousel */
+.carousel-item {
+    min-width: 100%;
+    transition: opacity 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Styling for images inside carousel */
+.carousel-item img {
+    width: 50%; /* Ensure image takes up full width of the container */
+    height: 50%; /* Keep the aspect ratio */
+    /* object-fit: cover; Make sure image fills the container properly */
+    border-radius: 100%; /* Optional: Add rounded corners to images */
+}
+
+/* Control buttons */
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 24px;
+    border-radius: 50%; /* Circular buttons */
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Darker shade on hover */
+}
+
+button.prev {
+    left: 20px;
+}
+
+button.next {
+    right: 20px;
+}
+
+/* Optional: Small screen adjustments */
+@media (max-width: 768px) {
+    .carousel-container {
+        width: 90%; /* Make carousel wider on smaller screens */
+    }
+
+    button {
+        padding: 10px;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-container {
+        width: 95%;
+    }
+
+    button {
+        padding: 8px;
+        font-size: 18px;
+    }
+}
